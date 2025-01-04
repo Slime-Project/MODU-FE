@@ -21,9 +21,7 @@
       "env": {
         "node": true
       },
-      "files": [
-        ".eslintrc.{json}"
-      ],
+      "files": [".eslintrc.{json}"],
       "parserOptions": {
         "sourceType": "script"
       }
@@ -44,34 +42,17 @@
       "version": "detect"
     }
   },
-  "plugins": [
-    "react",
-    "react-hooks",
-    "import"
-  ],
+  "plugins": ["react", "react-hooks", "import"],
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "no-restricted-imports": [
-      "error",
-      {
-        "patterns": [
-          ".*"
-        ]
-      }
-    ],
     "import/order": [
       "error",
       {
         "newlines-between": "always",
-        "groups": [
-          "builtin",
-          "external",
-          "parent",
-          "type"
-        ],
+        "groups": ["builtin", "external", "parent", "type"],
         "pathGroups": [
           {
             "pattern": "react",
