@@ -14,7 +14,8 @@
     "airbnb/hooks",
     "airbnb-typescript",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:tailwindcss/recommended"
   ],
   "overrides": [
     {
