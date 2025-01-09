@@ -1,0 +1,606 @@
+{
+  "colors": {
+    "system": {
+      "error": {
+        "value": "#ee0000",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#ee0000",
+          "type": "color"
+        },
+        "name": "colorsSystemError",
+        "attributes": {
+          "category": "colors",
+          "type": "system",
+          "item": "error"
+        },
+        "path": [
+          "colors",
+          "system",
+          "error"
+        ]
+      },
+      "warning": {
+        "value": "#ffc54a",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#ffc54a",
+          "type": "color"
+        },
+        "name": "colorsSystemWarning",
+        "attributes": {
+          "category": "colors",
+          "type": "system",
+          "item": "warning"
+        },
+        "path": [
+          "colors",
+          "system",
+          "warning"
+        ]
+      },
+      "success": {
+        "value": "#009c7b",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#009c7b",
+          "type": "color"
+        },
+        "name": "colorsSystemSuccess",
+        "attributes": {
+          "category": "colors",
+          "type": "system",
+          "item": "success"
+        },
+        "path": [
+          "colors",
+          "system",
+          "success"
+        ]
+      },
+      "info": {
+        "value": "#0074ff",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#0074ff",
+          "type": "color"
+        },
+        "name": "colorsSystemInfo",
+        "attributes": {
+          "category": "colors",
+          "type": "system",
+          "item": "info"
+        },
+        "path": [
+          "colors",
+          "system",
+          "info"
+        ]
+      }
+    },
+    "primary": {
+      "50": {
+        "value": "#f0e6ff",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#f0e6ff",
+          "type": "color"
+        },
+        "name": "colorsPrimary50",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "50"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "50"
+        ]
+      },
+      "100": {
+        "value": "#d7c2fe",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#d7c2fe",
+          "type": "color"
+        },
+        "name": "colorsPrimary100",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "100"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "100"
+        ]
+      },
+      "200": {
+        "value": "#bc98fe",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#bc98fe",
+          "type": "color"
+        },
+        "name": "colorsPrimary200",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "200"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "200"
+        ]
+      },
+      "300": {
+        "value": "#9f6aff",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#9f6aff",
+          "type": "color"
+        },
+        "name": "colorsPrimary300",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "300"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "300"
+        ]
+      },
+      "400": {
+        "value": "#8744ff",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#8744ff",
+          "type": "color"
+        },
+        "name": "colorsPrimary400",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "400"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "400"
+        ]
+      },
+      "500": {
+        "value": "#690dfd",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#690dfd",
+          "type": "color"
+        },
+        "name": "colorsPrimary500",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "500"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "500"
+        ]
+      },
+      "600": {
+        "value": "#5b05f7",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#5b05f7",
+          "type": "color"
+        },
+        "name": "colorsPrimary600",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "600"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "600"
+        ]
+      },
+      "700": {
+        "value": "#4400ef",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#4400ef",
+          "type": "color"
+        },
+        "name": "colorsPrimary700",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "700"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "700"
+        ]
+      },
+      "800": {
+        "value": "#2600ea",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#2600ea",
+          "type": "color"
+        },
+        "name": "colorsPrimary800",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "800"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "800"
+        ]
+      },
+      "900": {
+        "value": "#0000db",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#0000db",
+          "type": "color"
+        },
+        "name": "colorsPrimary900",
+        "attributes": {
+          "category": "colors",
+          "type": "primary",
+          "item": "900"
+        },
+        "path": [
+          "colors",
+          "primary",
+          "900"
+        ]
+      }
+    },
+    "gray": {
+      "50": {
+        "value": "#fafafa",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#fafafa",
+          "type": "color"
+        },
+        "name": "colorsGray50",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "50"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "50"
+        ]
+      },
+      "100": {
+        "value": "#f5f5f5",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#f5f5f5",
+          "type": "color"
+        },
+        "name": "colorsGray100",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "100"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "100"
+        ]
+      },
+      "200": {
+        "value": "#eeeeee",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#eeeeee",
+          "type": "color"
+        },
+        "name": "colorsGray200",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "200"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "200"
+        ]
+      },
+      "300": {
+        "value": "#e0e0e0",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#e0e0e0",
+          "type": "color"
+        },
+        "name": "colorsGray300",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "300"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "300"
+        ]
+      },
+      "350": {
+        "value": "#cfcfcf",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#cfcfcf",
+          "type": "color"
+        },
+        "name": "colorsGray350",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "350"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "350"
+        ]
+      },
+      "400": {
+        "value": "#bdbdbd",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#bdbdbd",
+          "type": "color"
+        },
+        "name": "colorsGray400",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "400"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "400"
+        ]
+      },
+      "500": {
+        "value": "#9e9e9e",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#9e9e9e",
+          "type": "color"
+        },
+        "name": "colorsGray500",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "500"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "500"
+        ]
+      },
+      "600": {
+        "value": "#757575",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#757575",
+          "type": "color"
+        },
+        "name": "colorsGray600",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "600"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "600"
+        ]
+      },
+      "700": {
+        "value": "#616161",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#616161",
+          "type": "color"
+        },
+        "name": "colorsGray700",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "700"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "700"
+        ]
+      },
+      "800": {
+        "value": "#424242",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#424242",
+          "type": "color"
+        },
+        "name": "colorsGray800",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "800"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "800"
+        ]
+      },
+      "900": {
+        "value": "#212121",
+        "type": "color",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "original": {
+          "value": "#212121",
+          "type": "color"
+        },
+        "name": "colorsGray900",
+        "attributes": {
+          "category": "colors",
+          "type": "gray",
+          "item": "900"
+        },
+        "path": [
+          "colors",
+          "gray",
+          "900"
+        ]
+      }
+    }
+  },
+  "boxShadow": {
+    "top": {
+      "md": {
+        "value": {
+          "css": [
+            {
+              "color": "#0000001a",
+              "type": "dropShadow",
+              "blur": 4,
+              "spread": -2,
+              "offsetX": 0,
+              "offsetY": -2
+            },
+            {
+              "color": "#0000001a",
+              "type": "dropShadow",
+              "blur": 6,
+              "spread": -1,
+              "offsetX": 0,
+              "offsetY": -4
+            }
+          ]
+        },
+        "type": "shadow",
+        "filePath": "tokens/transform/global.json",
+        "isSource": true,
+        "$extensions": {
+          "studio.tokens": {
+            "originalType": "boxShadow"
+          }
+        },
+        "original": {
+          "value": [
+            {
+              "color": "#0000001a",
+              "type": "dropShadow",
+              "blur": 4,
+              "spread": -2,
+              "offsetX": 0,
+              "offsetY": -2
+            },
+            {
+              "color": "#0000001a",
+              "type": "dropShadow",
+              "blur": 6,
+              "spread": -1,
+              "offsetX": 0,
+              "offsetY": -4
+            }
+          ],
+          "type": "shadow",
+          "$extensions": {
+            "studio.tokens": {
+              "originalType": "boxShadow"
+            }
+          }
+        },
+        "name": "boxShadowTopMd",
+        "attributes": {
+          "category": "boxShadow",
+          "type": "top",
+          "item": "md"
+        },
+        "path": [
+          "boxShadow",
+          "top",
+          "md"
+        ]
+      }
+    }
+  }
+}
