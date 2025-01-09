@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter, Noto_Sans_KR } from 'next/font/google';
+import { Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
-import Head from 'next/head';
 
 const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
@@ -28,9 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <Head>
+      <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-      </Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
+          rel="stylesheet"
+        />
+      </head>
       <body className={notoSans.className}>{children}</body>
     </html>
   );
