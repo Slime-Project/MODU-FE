@@ -3,13 +3,24 @@
 @tailwind utilities;
 
 :root {
+  font-size: 100%;
 }
 
 body {
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-2xs {
+    font-size: 0.625rem; /* 10px */
+    @apply leading-none;
+  }
+
+  .text-3xs {
+    font-size: 0.5rem; /* 8px */
+    @apply leading-none;
+  }
+
+  .ellipsis {
+    @apply overflow-hidden text-ellipsis whitespace-nowrap;
   }
 }
