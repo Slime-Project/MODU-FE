@@ -106,30 +106,5 @@
         "type": "color"
       }
     }
-  },
-  "boxShadow": {
-    "top": {
-      "md": {
-        "value": [
-          {
-            "color": "#0000001a",
-            "type": "dropShadow",
-            "x": 0,
-            "y": -2,
-            "blur": 4,
-            "spread": -2
-          },
-          {
-            "color": "#0000001a",
-            "type": "dropShadow",
-            "x": 0,
-            "y": -4,
-            "blur": 6,
-            "spread": -1
-          }
-        ],
-        "type": "boxShadow"
-      }
-    }
   }
 }
