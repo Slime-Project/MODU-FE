@@ -40,26 +40,7 @@ module.exports = {
       },
       boxShadow: {
         top: {
-          md: {
-            css: [
-          {
-                color: "#0000001a",
-                type: "dropShadow",
-                blur: 4,
-                spread: -2,
-                offsetX: 0,
-                offsetY: -2
-              },
-          {
-                color: "#0000001a",
-                type: "dropShadow",
-                blur: 6,
-                spread: -1,
-                offsetX: 0,
-                offsetY: -4
-              }
-        ]
-          }
+          md: "0 -2px 4px -2px #0000001a, 0 -4px 6px -1px #0000001a"
         }
       }
     },
