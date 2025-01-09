@@ -6,7 +6,6 @@ on:
       - figma
     paths:
       - 'tokens/tokens.json'
-      - '.github/workflows/design-tokens-update.yml'
 
 permissions:
   contents: write
