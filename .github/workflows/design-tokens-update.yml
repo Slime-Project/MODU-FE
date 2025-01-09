@@ -1,0 +1,52 @@
+name: Design Tokens Update Automation
+
+on:
+  push:
+    branches:
+      - figma
+    paths:
+      - 'tokens/tokens.json'
+      - '.github/workflows/design-tokens-update.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update-figma-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'node'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run transform-token
+        run: npm run transform-token
+
+      - name: Run build-token
+        run: npm run build-token
+
+      - name: Run generate-tailwind-config
+        run: npm run generate-tailwind-config
+
+      - name: Commit & Push changes
+        run: |
+          git config --local user.name "KinHayeon1"
+          git config --local user.email "k.hayeon00@gmail.com"
+          git add .
+          git commit -m "chore: Update tailwind config"
+          git push
+
+      - name: Create pull request
+        uses: thomaseizinger/create-pull-request@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          head: ${{ github.ref }}
+          base: dev
+          title: 'Update tailwind config'
