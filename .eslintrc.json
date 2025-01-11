@@ -11,7 +11,6 @@
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "airbnb",
-    "airbnb/hooks",
     "airbnb-typescript",
     "plugin:prettier/recommended",
     "plugin:storybook/recommended",
@@ -19,12 +18,9 @@
   ],
   "overrides": [
     {
-      "env": {
-        "node": true
-      },
-      "files": [".eslintrc.{json}"],
-      "parserOptions": {
-        "sourceType": "script"
+      "files": ["scripts/**/*.ts"],
+      "rules": {
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
       }
     }
   ],
@@ -35,7 +31,7 @@
     },
     "ecmaVersion": "latest",
     "sourceType": "module",
-    "project": "./tsconfig.eslint.json",
+    "project": "tsconfig.json",
     "tsconfigRootDir": "./"
   },
   "settings": {
@@ -43,17 +39,15 @@
       "version": "detect"
     }
   },
-  "plugins": ["react", "react-hooks", "import"],
+  "plugins": ["react", "import"],
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
     "import/order": [
       "error",
       {
         "newlines-between": "always",
-        "groups": ["builtin", "external", "parent", "type"],
+        "groups": ["builtin", "external", "parent", "sibling", "type"],
         "pathGroups": [
           {
             "pattern": "react",
