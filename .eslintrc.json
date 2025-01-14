@@ -18,7 +18,7 @@
   ],
   "overrides": [
     {
-      "files": ["scripts/**/*.ts"],
+      "files": ["scripts/**/*.ts", "src/**/*.stories.ts"],
       "rules": {
         "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
       }
@@ -43,6 +43,7 @@
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off",
     "import/order": [
       "error",
       {
