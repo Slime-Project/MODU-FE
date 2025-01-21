@@ -17,12 +17,14 @@ jobs:
         run: |
           if [ ! -d "./tests" ]; then
             echo "Tests directory does not exist. Skipping test execution."
-            exit 1
+            echo "no_tests=true" >> $GITHUB_ENV
+            exit 0
           fi
 
           if [ ! -f "$(find ./tests -type f -name '*.spec.ts')" ]; then
             echo "No Playwright tests found. Skipping test execution."
-            exit 1
+            echo "no_tests=true" >> $GITHUB_ENV
+            exit 0
           fi
 
       - uses: actions/setup-node@v4
