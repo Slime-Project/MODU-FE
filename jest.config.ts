@@ -20,7 +20,7 @@ const config: Config = {
   verbose: true,
   testRegex:
     testType === 'integration'
-      ? '.*\\/.*\\.integration.test\\.ts$'
+      ? '.*\\.integration.test\\.(ts|tsx)$'
       : '^(?!.*\\.integration).*\\.test\\.(ts|tsx)$'
 };
 
