@@ -15,19 +15,21 @@ export default function Btn({
   shadow,
   type,
   onClick,
+  className = '',
   children
 }: {
   size: keyof typeof btnTheme.size;
   disabled: boolean;
   shadow?: boolean;
   type?: 'button' | 'submit';
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  className?: string;
   children: ReactNode;
 }) {
   return (
     <button
       type={type === 'submit' ? 'submit' : 'button'}
-      className={`${btnTheme.size[size]} ${shadow ? btnTheme.shadow : ''} rounded-lg bg-primary-400 font-bold leading-none text-white disabled:bg-gray-350`}
+      className={`${className} ${btnTheme.size[size]} ${shadow ? btnTheme.shadow : ''} rounded-lg bg-primary-400 font-bold leading-none text-white disabled:bg-gray-350`}
       disabled={disabled}
       onClick={onClick}
     >

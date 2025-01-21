@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import OutlineBtn, { outlineBtnTheme } from './OutlineBtn';
+import OutlineBtn, { outlineBtnTheme } from '.';
 
 describe('OutlineBtn Component', () => {
   it('renders the button with the correct size class', () => {

@@ -1,6 +1,6 @@
-import Btn from './Btn';
-
 import type { Meta, StoryObj } from '@storybook/react';
+
+import Btn from '.';
 
 const meta = {
   title: 'components/Btn',
@@ -9,11 +9,11 @@ const meta = {
     layout: 'centered'
   },
   tags: ['autodocs'],
-
   args: {
     size: 'base',
     disabled: false,
-    children: '다음'
+    children: '다음',
+    onClick: () => {}
   }
 } satisfies Meta<typeof Btn>;
 

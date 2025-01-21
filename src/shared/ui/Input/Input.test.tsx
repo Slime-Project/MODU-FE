@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import Input, { inputTheme } from './Input';
+import Input, { inputTheme } from '.';
 
 describe('Input Component', () => {
   it('renders the input with the correct size class', () => {
