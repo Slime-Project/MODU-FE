@@ -3,7 +3,8 @@ on:
   push:
     branches: [main, dev]
   pull_request:
-    branches: [main, dev]
+    types: [opened, synchronize, reopened]
+
 jobs:
   test:
     timeout-minutes: 60
@@ -17,6 +18,13 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Check if Playwright test files exist
+        id: check_test_files
+        run: |
+          if [ ! -f "$(find ./tests -type f -name '*.spec.ts')" ]; then
+            echo "No Playwright tests found. Skipping test execution."
+            exit 0  # No tests, skip with success
+          fi
       - name: Run Playwright tests
         run: npx playwright test
       - uses: actions/upload-artifact@v4
