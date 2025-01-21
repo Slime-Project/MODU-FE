@@ -23,7 +23,7 @@ jobs:
         run: |
           if [ ! -f "$(find ./tests -type f -name '*.spec.ts')" ]; then
             echo "No Playwright tests found. Skipping test execution."
-            exit 0  # No tests, skip with success
+            exit 0
           fi
       - name: Run Playwright tests
         run: npx playwright test
