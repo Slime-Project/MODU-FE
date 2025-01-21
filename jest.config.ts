@@ -20,8 +20,8 @@ const config: Config = {
   verbose: true,
   testRegex:
     testType === 'integration'
-      ? '.*\\.integration.test\\.(ts|tsx)$'
-      : '^(?!.*\\.integration).*\\.test\\.(ts|tsx)$'
+      ? 'src\\/.*\\.integration.test\\.(ts|tsx)$'
+      : 'src\\/.*(?<!\\.integration)\\.test\\.(ts|tsx)$'
 };
 
 export default createJestConfig(config);
