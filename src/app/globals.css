@@ -6,9 +6,28 @@
   font-size: 100%;
 }
 
-body {
-  @apply font-normal;
-  @apply text-gray-900;
+@layer base {
+  body {
+    @apply font-normal;
+    @apply text-gray-900;
+    @apply max-w-5xl;
+    @apply bg-gray-50;
+    @apply mx-auto;
+  }
+
+  main {
+    @apply bg-white;
+    @apply min-h-screen;
+    @apply shadow-md;
+  }
+
+  button {
+    @apply w-full;
+  }
+
+  label {
+    @apply block;
+  }
 }
 
 @layer utilities {

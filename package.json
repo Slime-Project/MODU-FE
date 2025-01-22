@@ -16,6 +16,8 @@
     "generate-tailwind-config": "node scripts/generate-tailwind-config.js",
     "precommit": "lint-staged",
     "test": "jest",
+    "test:integration": "TEST_TYPE=integration jest",
+    "test:e2e": "playwright test",
     "test:watch": "jest --watch"
   },
   "dependencies": {
@@ -31,6 +33,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.3",
+    "@playwright/test": "^1.49.1",
     "@storybook/addon-essentials": "^8.4.7",
     "@storybook/addon-interactions": "^8.4.7",
     "@storybook/addon-jest": "^8.4.7",

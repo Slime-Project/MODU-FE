@@ -5,6 +5,7 @@ import type { Config } from 'jest';
 const createJestConfig = nextJest({
   dir: './'
 });
+const testType = process.env.TEST_TYPE || 'unit';
 
 const config: Config = {
   clearMocks: true,
@@ -16,8 +17,11 @@ const config: Config = {
   resetMocks: true,
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'jsdom',
-  testMatch: ['<rootDir>/src/**/*.test.ts', '<rootDir>/src/**/*.test.tsx'],
-  verbose: true
+  verbose: true,
+  testRegex:
+    testType === 'integration'
+      ? 'src\\/.*\\.integration.test\\.(ts|tsx)$'
+      : 'src\\/.*(?<!\\.integration)\\.test\\.(ts|tsx)$'
 };
 
 export default createJestConfig(config);

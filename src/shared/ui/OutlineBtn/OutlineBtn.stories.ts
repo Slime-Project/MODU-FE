@@ -1,6 +1,6 @@
-import OutlineBtn from './OutlineBtn';
-
 import type { Meta, StoryObj } from '@storybook/react';
+
+import OutlineBtn from '.';
 
 const meta = {
   title: 'components/OutlineBtn',
