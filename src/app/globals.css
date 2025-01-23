@@ -19,6 +19,7 @@
     @apply bg-white;
     @apply min-h-screen;
     @apply shadow-md;
+    @apply pt-11;
   }
 
   button {
@@ -43,13 +44,5 @@
 
   .ellipsis {
     @apply overflow-hidden text-ellipsis whitespace-nowrap;
-  }
-
-  .material-symbols-rounded {
-    font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24;
   }
 }
