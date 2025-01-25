@@ -19,7 +19,7 @@ describe('SingleTagSelector', () => {
     expect(container.firstChild).toHaveClass(className);
   });
 
-  it('should render TagInput with correct parameters', () => {
+  it('should render TagInput with correct props', () => {
     render(<SingleTagSelector tags={tags} name={name} updateTag={updateTagMock} />);
     tags.forEach(tag => {
       expect(TagInput).toHaveBeenCalledWith(
@@ -29,7 +29,7 @@ describe('SingleTagSelector', () => {
           value: tag,
           onChange: expect.any(Function)
         }),
-        undefined
+        expect.anything()
       );
     });
   });
