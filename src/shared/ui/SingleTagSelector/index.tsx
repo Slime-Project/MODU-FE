@@ -13,7 +13,7 @@ export default function SingleTagSelector<T extends string>({
   className?: string;
 }>) {
   return (
-    <ul className={`flex gap-2 ${className}`}>
+    <ul className={`${className} slider relative flex gap-2`}>
       {tags.map(tag => (
         <li key={tag} className="shrink-0">
           <TagInput

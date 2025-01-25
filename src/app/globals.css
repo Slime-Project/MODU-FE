@@ -45,4 +45,16 @@
   .ellipsis {
     @apply overflow-hidden text-ellipsis whitespace-nowrap;
   }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scroll::-webkit-scrollbar {
+    display: none; /* 웹킷 기반 브라우저 */
+  }
+  .slider {
+    @apply hide-scrollbar;
+    @apply overflow-x-scroll;
+  }
 }
