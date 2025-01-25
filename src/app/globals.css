@@ -10,7 +10,7 @@
   body {
     @apply font-normal;
     @apply text-gray-900;
-    @apply max-w-5xl;
+    @apply max-w-3xl;
     @apply bg-gray-50;
     @apply mx-auto;
   }

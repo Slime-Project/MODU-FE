@@ -14,7 +14,7 @@ export default function BottomBtn({
   children: ReactNode;
 }) {
   return (
-    <div className="fixed inset-x-0 bottom-4 mx-auto max-w-5xl px-4">
+    <div className="fixed inset-x-0 bottom-4 mx-auto max-w-3xl px-4">
       <Btn type={type} size="base" disabled={disabled} shadow onClick={onClick}>
         {children}
       </Btn>
