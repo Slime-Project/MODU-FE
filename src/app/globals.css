@@ -10,7 +10,7 @@
   body {
     @apply font-normal;
     @apply text-gray-900;
-    @apply max-w-5xl;
+    @apply max-w-3xl;
     @apply bg-gray-50;
     @apply mx-auto;
   }
@@ -19,6 +19,7 @@
     @apply bg-white;
     @apply min-h-screen;
     @apply shadow-md;
+    @apply pt-11;
   }
 
   button {
@@ -45,11 +46,15 @@
     @apply overflow-hidden text-ellipsis whitespace-nowrap;
   }
 
-  .material-symbols-rounded {
-    font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24;
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scroll::-webkit-scrollbar {
+    display: none; /* 웹킷 기반 브라우저 */
+  }
+  .slider {
+    @apply hide-scrollbar;
+    @apply overflow-x-scroll;
   }
 }

@@ -1,0 +1,32 @@
+import { FormEventHandler } from 'react';
+
+import { Header, BackLink, IconBtn, LanguageBtn } from './common';
+
+export default function SearchTopBar({
+  onSubmit
+}: {
+  onSubmit: FormEventHandler<HTMLFormElement>;
+}) {
+  return (
+    <Header>
+      <h1 className="sr-only">MODU</h1>
+      <BackLink />
+      <form
+        className="relative mx-1.5 ml-3 flex w-full items-center"
+        onSubmit={onSubmit}
+        name="search"
+      >
+        <input
+          className="h-7 w-full rounded-full bg-gray-200"
+          type="text"
+          maxLength={12}
+          minLength={1}
+          required
+          placeholder="집들이 선물"
+        />
+        <IconBtn className="absolute right-0.5" src="/svgs/search.svg" alt="search" />
+      </form>
+      <LanguageBtn />
+    </Header>
+  );
+}

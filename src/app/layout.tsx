@@ -27,13 +27,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"
-          rel="stylesheet"
-        />
-      </head>
       <body className={notoSans.className}>{children}</body>
     </html>
   );

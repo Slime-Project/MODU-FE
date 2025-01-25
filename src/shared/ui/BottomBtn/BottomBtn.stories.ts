@@ -5,11 +5,7 @@ import BottomBtn from '.';
 const meta = {
   title: 'components/BottomBtn',
   component: BottomBtn,
-  parameters: {
-    layout: 'centered'
-  },
   tags: ['autodocs'],
-
   args: {
     disabled: false,
     children: '다음',
