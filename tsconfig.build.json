@@ -5,8 +5,18 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", "src/**/*.stories.ts", "src/**/*.test.ts", "src/**/*.test.tsx"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.stories.ts",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ]
 }
