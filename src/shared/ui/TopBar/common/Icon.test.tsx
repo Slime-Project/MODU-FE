@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import Icon from '@/shared/ui/TopBar/common/Icon';
+import Icon from './Icon';
 
 describe('Icon Component', () => {
   it('should render an anchor tag with the given src', () => {
@@ -11,7 +11,7 @@ describe('Icon Component', () => {
 
   it('should render an anchor tag with the given alt', () => {
     const alt = '/search';
-    const { getByAltText } = render(<Icon src="" alt={alt} />);
+    const { getByAltText } = render(<Icon src="/test.svg" alt={alt} />);
     expect(getByAltText(alt)).toBeInTheDocument();
   });
 });
