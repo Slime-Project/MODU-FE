@@ -1,6 +1,6 @@
-import changeHash from '@/shared/lib/utils';
+import changeHash from './window';
 
-describe('utils', () => {
+describe('window utils', () => {
   describe('changeHash', () => {
     it('change url hash', () => {
       changeHash('new');
