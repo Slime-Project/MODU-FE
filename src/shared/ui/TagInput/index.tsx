@@ -26,14 +26,14 @@ export default function TagInput({
     <>
       <input
         className="peer sr-only"
-        id={value}
+        id={`${name}-${value}`}
         type={type}
         name={name}
         value={value}
         onChange={onChange}
       />
       <label
-        htmlFor={value}
+        htmlFor={`${name}-${value}`}
         className={`${tagInputTheme.size[size]} cursor-pointer rounded-full border border-gray-300 p-1.5 leading-none peer-checked:border-primary-400`}
       >
         {label}
