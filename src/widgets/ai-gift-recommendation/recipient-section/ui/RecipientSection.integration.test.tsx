@@ -12,6 +12,7 @@ import RecipientSection from './RecipientSection';
 jest.mock('@/widgets/ai-gift-recommendation/ui/FieldsContainer');
 jest.mock('@/widgets/ai-gift-recommendation/ui/FieldWrap');
 jest.mock('@/widgets/ai-gift-recommendation/ui/SectionTitle');
+jest.mock('@/shared/ui/SingleTagSelector');
 
 describe('RecipientSection', () => {
   it('enables the button when all fields are selected', () => {
