@@ -12,7 +12,6 @@ import {
   Gender,
   Relation
 } from '@/entities/ai-gift-recommendation/model/types';
-import UpdateTag from '@/shared/lib/hooks/types';
 import changeHash from '@/shared/lib/utils/window';
 import BottomBtn from '@/shared/ui/BottomBtn';
 import Input from '@/shared/ui/Input';
@@ -33,10 +32,10 @@ export default function RecipientSection({
   relation,
   otherRelation
 }: {
-  updateGender: UpdateTag<Gender>;
-  updateAgeGroup: UpdateTag<AgeGroup>;
-  updateAgePhase: UpdateTag<AgePhase>;
-  updateRelation: UpdateTag<Relation>;
+  updateGender: (gender: Gender) => void;
+  updateAgeGroup: (ageGroup: AgeGroup) => void;
+  updateAgePhase: (agePhase: AgePhase) => void;
+  updateRelation: (relation: Relation) => void;
   updateOtherRelation: (value: string) => void;
   gender: Gender | null;
   ageGroup: AgeGroup | null;
