@@ -3,19 +3,19 @@
 import { useEffect, useState } from 'react';
 
 import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation/model/consts';
-import { AiGiftRecommendationHash } from '@/entities/ai-gift-recommendation/model/types';
+import {
+  AgeGroup,
+  AgePhase,
+  AiGiftRecommendationHash,
+  Gender,
+  Relation
+} from '@/entities/ai-gift-recommendation/model/types';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
 import ProgressBar from '@/shared/ui/ProgressBar';
 import { TopBar } from '@/shared/ui/TopBar';
-import {
-  RecipientSection,
-  Gender,
-  AgeGroup,
-  AgePhase,
-  Relation
-} from '@/widgets/ai-gift-recommendation/recipient-section';
+import RecipientSection from '@/widgets/ai-gift-recommendation/recipient-section';
 
 export const getPercentage = (index: number) =>
   calculatePercentage(index + 1, AI_GIFT_RECOMMENDATION_HASHES.length + 1);
