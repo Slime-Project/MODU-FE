@@ -1,4 +1,3 @@
-import UpdateTag from '@/shared/lib/hooks/types';
 import TagInput from '@/shared/ui/TagInput';
 
 export default function SingleTagSelector<T extends string>({
@@ -9,7 +8,7 @@ export default function SingleTagSelector<T extends string>({
 }: Readonly<{
   tags: readonly T[];
   name: string;
-  updateTag: UpdateTag<T>;
+  updateTag: (tag: T) => void;
   className?: string;
 }>) {
   return (

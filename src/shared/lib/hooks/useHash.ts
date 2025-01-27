@@ -1,12 +1,21 @@
 import { useEffect, useState } from 'react';
 
-export default function useHash() {
-  const [hash, setHash] = useState<string>();
+import changeHash from '@/shared/lib/utils/window';
+
+export default function useHash<T extends string>(hashes: readonly T[]) {
+  const [hash, setHash] = useState<T>();
 
   useEffect(() => {
+    const isValidHash = (value: string): value is T => hashes.some(v => v === value);
     const getHash = () => decodeURIComponent(window.location.hash.replace('#', ''));
     const updateHash = () => {
-      setHash(getHash());
+      const curr = getHash();
+
+      if (isValidHash(curr)) {
+        setHash(curr);
+      } else {
+        changeHash(hash || hashes[0]);
+      }
     };
     updateHash();
 
@@ -15,7 +24,7 @@ export default function useHash() {
     return () => {
       window.removeEventListener('hashchange', updateHash, false);
     };
-  }, []);
+  }, [hash]);
 
   return hash;
 }
