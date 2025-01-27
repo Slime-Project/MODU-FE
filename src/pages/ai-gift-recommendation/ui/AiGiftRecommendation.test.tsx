@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import AI_GIFT_RECOMMENDATION_HASHES from '@/pages/ai-gift-recommendation/model/consts';
+import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation/model/consts';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';

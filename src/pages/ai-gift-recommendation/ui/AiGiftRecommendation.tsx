@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-import AI_GIFT_RECOMMENDATION_HASHES from '@/pages/ai-gift-recommendation/model/consts';
-import { AiGiftRecommendationHash } from '@/pages/ai-gift-recommendation/model/types';
+import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation/model/consts';
+import { AiGiftRecommendationHash } from '@/entities/ai-gift-recommendation/model/types';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
@@ -29,6 +29,10 @@ export default function AiGiftRecommendation() {
   const hash = useHash<AiGiftRecommendationHash>(AI_GIFT_RECOMMENDATION_HASHES);
 
   const [percentage, setPercentage] = useState(0);
+  const [otherRelation, setOtherRelation] = useState('');
+  const updateOtherRelation = (value: string) => {
+    setOtherRelation(value);
+  };
 
   useEffect(() => {
     const index = AI_GIFT_RECOMMENDATION_HASHES.findIndex(v => v === hash);
@@ -47,10 +51,12 @@ export default function AiGiftRecommendation() {
               updateAgeGroup={updateAgeGroup}
               updateAgePhase={updateAgePhase}
               updateRelation={updateRelation}
+              updateOtherRelation={updateOtherRelation}
               gender={gender}
               ageGroup={ageGroup}
               agePhase={agePhase}
               relation={relation}
+              otherRelation={otherRelation}
             />
           )}
         </form>
