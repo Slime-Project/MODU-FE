@@ -4,7 +4,7 @@ import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';
-import { RecipientSection } from '@/widgets/ai-gift-recommendation/recipient-section';
+import RecipientSection from '@/widgets/ai-gift-recommendation-sections';
 
 import AiGiftRecommendation, { getPercentage } from './AiGiftRecommendation';
 
@@ -12,7 +12,7 @@ jest.mock('@/shared/lib/hooks/useTagSelection');
 jest.mock('@/shared/lib/hooks/useHash');
 jest.mock('@/shared/ui/TopBar');
 jest.mock('@/shared/ui/ProgressBar');
-jest.mock('@/widgets/ai-gift-recommendation/recipient-section');
+jest.mock('@/widgets/ai-gift-recommendation/ai-gift-recommendation-sections');
 
 describe('AiGiftRecommendation', () => {
   beforeEach(() => {

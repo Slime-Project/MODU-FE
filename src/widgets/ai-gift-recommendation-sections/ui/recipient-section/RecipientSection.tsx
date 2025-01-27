@@ -16,9 +16,11 @@ import changeHash from '@/shared/lib/utils/window';
 import BottomBtn from '@/shared/ui/BottomBtn';
 import Input from '@/shared/ui/Input';
 import SingleTagSelector from '@/shared/ui/SingleTagSelector';
-import FieldsContainer from '@/widgets/ai-gift-recommendation/ui/FieldsContainer';
-import FieldWrap from '@/widgets/ai-gift-recommendation/ui/FieldWrap';
-import SectionTitle from '@/widgets/ai-gift-recommendation/ui/SectionTitle';
+import {
+  FieldsContainer,
+  FieldWrap,
+  SectionTitle
+} from '@/widgets/ai-gift-recommendation-sections/ui/common';
 
 export default function RecipientSection({
   updateGender,

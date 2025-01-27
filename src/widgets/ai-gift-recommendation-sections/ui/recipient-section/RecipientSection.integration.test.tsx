@@ -10,7 +10,11 @@ import {
 
 import RecipientSection from './RecipientSection';
 
-jest.mock('@/widgets/ai-gift-recommendation/ui/SectionTitle');
+jest.mock('@/widgets/ai-gift-recommendation-sections/ui/common', () => ({
+  ...jest.requireActual('./common'),
+  FieldsContainer: jest.fn(),
+  FieldWrap: jest.fn()
+}));
 jest.mock('@/shared/ui/SingleTagSelector');
 
 describe('RecipientSection', () => {

@@ -15,7 +15,7 @@ import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
 import ProgressBar from '@/shared/ui/ProgressBar';
 import { TopBar } from '@/shared/ui/TopBar';
-import RecipientSection from '@/widgets/ai-gift-recommendation/recipient-section';
+import RecipientSection from '@/widgets/ai-gift-recommendation-sections';
 
 export const getPercentage = (index: number) =>
   calculatePercentage(index + 1, AI_GIFT_RECOMMENDATION_HASHES.length + 1);
