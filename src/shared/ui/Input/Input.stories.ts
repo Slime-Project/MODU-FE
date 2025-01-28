@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import Input from './Input';
 
-import Input from '.';
+import type { Meta, StoryObj } from '@storybook/react';
 
 const meta = {
   title: 'components/Input',
@@ -10,11 +10,11 @@ const meta = {
   },
   tags: ['autodocs'],
   args: {
+    label: '',
     size: 'xs',
     placeholder: '입력해 주세요',
     value: '',
-    onChange: () => {},
-    maxLength: 30
+    onChange: () => {}
   }
 } satisfies Meta<typeof Input>;
 
@@ -28,15 +28,17 @@ export const Xs: Story = {
   }
 };
 
-export const TwoXs: Story = {
-  args: {
-    size: '2xs'
-  }
-};
-
 export const Value: Story = {
   args: {
     value: '안녕하세요'
+  }
+};
+
+export const Text: Story = {};
+
+export const Number: Story = {
+  args: {
+    type: 'number'
   }
 };
 

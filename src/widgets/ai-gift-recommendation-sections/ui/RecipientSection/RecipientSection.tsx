@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import {
   AGE_GROUPS,
   AGE_PHASES,
+  AI_GIFT_RECOMMENDATION_HASHES,
   GENDERS,
   RELATIONS
 } from '@/entities/ai-gift-recommendation/model/consts';
@@ -14,11 +15,13 @@ import {
 } from '@/entities/ai-gift-recommendation/model/types';
 import changeHash from '@/shared/lib/utils/window';
 import BottomBtn from '@/shared/ui/BottomBtn';
-import Input from '@/shared/ui/Input';
+import { TextInput } from '@/shared/ui/Input';
 import SingleTagSelector from '@/shared/ui/SingleTagSelector';
-import FieldsContainer from '@/widgets/ai-gift-recommendation/ui/FieldsContainer';
-import FieldWrap from '@/widgets/ai-gift-recommendation/ui/FieldWrap';
-import SectionTitle from '@/widgets/ai-gift-recommendation/ui/SectionTitle';
+import {
+  FieldsContainer,
+  FieldWrap,
+  SectionTitle
+} from '@/widgets/ai-gift-recommendation-sections/ui/common';
 
 export default function RecipientSection({
   updateGender,
@@ -79,19 +82,20 @@ export default function RecipientSection({
         <FieldWrap title="상대방과 나의 관계">
           <SingleTagSelector name="relation" tags={RELATIONS} updateTag={updateRelation} />
           {relation === '기타' && (
-            <Input
+            <TextInput
+              label="기타 관계"
               className="mt-5 w-36"
               size="xs"
               placeholder="어떤 사이인가요?"
               value={otherRelation}
               maxLength={12}
-              onChange={e => updateOtherRelation(e.target.value)}
+              onChange={e => updateOtherRelation(e.currentTarget.value)}
               required
             />
           )}
         </FieldWrap>
       </FieldsContainer>
-      <BottomBtn disabled={disabled} onClick={() => changeHash('gift')}>
+      <BottomBtn disabled={disabled} onClick={() => changeHash(AI_GIFT_RECOMMENDATION_HASHES[1])}>
         다음
       </BottomBtn>
     </section>
