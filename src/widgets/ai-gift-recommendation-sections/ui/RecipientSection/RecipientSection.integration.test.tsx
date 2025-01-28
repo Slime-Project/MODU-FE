@@ -11,9 +11,8 @@ import {
 import RecipientSection from './RecipientSection';
 
 jest.mock('@/widgets/ai-gift-recommendation-sections/ui/common', () => ({
-  ...jest.requireActual('./common'),
-  FieldsContainer: jest.fn(),
-  FieldWrap: jest.fn()
+  ...jest.requireActual('@/widgets/ai-gift-recommendation-sections/ui/common'),
+  SectionTitle: jest.fn()
 }));
 jest.mock('@/shared/ui/SingleTagSelector');
 
@@ -130,6 +129,32 @@ describe('RecipientSection', () => {
     );
 
     expect(screen.queryByRole('textbox')).not.toBeInTheDocument();
+  });
+
+  it('calls updateOtherRelation when input changes', () => {
+    const mockedUpdateOtherRelation = jest.fn();
+    const otherRelation = 'initial';
+    const newOtherRelation = 'new';
+
+    const { getByDisplayValue } = render(
+      <RecipientSection
+        updateGender={() => {}}
+        updateAgeGroup={() => {}}
+        updateAgePhase={() => {}}
+        updateRelation={() => {}}
+        updateOtherRelation={mockedUpdateOtherRelation}
+        gender={null}
+        ageGroup={null}
+        agePhase={null}
+        relation="기타"
+        otherRelation={otherRelation}
+      />
+    );
+
+    const input = getByDisplayValue(otherRelation);
+    fireEvent.change(input, { target: { value: newOtherRelation } });
+
+    expect(mockedUpdateOtherRelation).toHaveBeenCalledWith(newOtherRelation);
   });
 
   it('go next section when the button is clicked', () => {

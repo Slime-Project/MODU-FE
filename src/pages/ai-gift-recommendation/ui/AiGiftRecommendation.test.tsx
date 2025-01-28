@@ -4,7 +4,7 @@ import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';
-import RecipientSection from '@/widgets/ai-gift-recommendation-sections';
+import { GiftSection, RecipientSection } from '@/widgets/ai-gift-recommendation-sections';
 
 import AiGiftRecommendation, { getPercentage } from './AiGiftRecommendation';
 
@@ -12,7 +12,7 @@ jest.mock('@/shared/lib/hooks/useTagSelection');
 jest.mock('@/shared/lib/hooks/useHash');
 jest.mock('@/shared/ui/TopBar');
 jest.mock('@/shared/ui/ProgressBar');
-jest.mock('@/widgets/ai-gift-recommendation/ai-gift-recommendation-sections');
+jest.mock('@/widgets/ai-gift-recommendation-sections');
 
 describe('AiGiftRecommendation', () => {
   beforeEach(() => {
@@ -32,6 +32,18 @@ describe('AiGiftRecommendation', () => {
     jest.mocked(useHash).mockReturnValue('gift');
     render(<AiGiftRecommendation />);
     expect(RecipientSection).not.toHaveBeenCalled();
+  });
+
+  it('should render GiftSection when hash is "gift"', () => {
+    jest.mocked(useHash).mockReturnValue('gift');
+    render(<AiGiftRecommendation />);
+    expect(GiftSection).toHaveBeenCalled();
+  });
+
+  it('should not render GiftSection when hash is not "gift"', () => {
+    jest.mocked(useHash).mockReturnValue('extra');
+    render(<AiGiftRecommendation />);
+    expect(GiftSection).not.toHaveBeenCalled();
   });
 
   it('should render ProgressBar with 0% initially', () => {

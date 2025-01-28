@@ -1,3 +1,5 @@
-import RecipientSection from './ui/recipient-section/RecipientSection';
+import GiftSection from '@/widgets/ai-gift-recommendation-sections/ui/GiftSection/GiftSection';
 
-export default RecipientSection;
+import RecipientSection from './ui/RecipientSection/RecipientSection';
+
+export { RecipientSection, GiftSection };
