@@ -1,10 +1,10 @@
+import Input from './Input';
+
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TextInput } from '.';
-
 const meta = {
-  title: 'components/TextInput',
-  component: TextInput,
+  title: 'components/Input',
+  component: Input,
   parameters: {
     layout: 'centered'
   },
@@ -14,10 +14,9 @@ const meta = {
     size: 'xs',
     placeholder: '입력해 주세요',
     value: '',
-    onChange: () => {},
-    maxLength: 30
+    onChange: () => {}
   }
-} satisfies Meta<typeof TextInput>;
+} satisfies Meta<typeof Input>;
 
 export default meta;
 
@@ -32,6 +31,14 @@ export const Xs: Story = {
 export const Value: Story = {
   args: {
     value: '안녕하세요'
+  }
+};
+
+export const Text: Story = {};
+
+export const Number: Story = {
+  args: {
+    type: 'number'
   }
 };
 
