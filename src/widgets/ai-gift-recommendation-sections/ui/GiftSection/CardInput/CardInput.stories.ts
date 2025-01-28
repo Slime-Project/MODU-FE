@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import TagInput from '.';
+import CardInput from '.';
 
 const meta = {
-  title: 'components/TagInput',
-  component: TagInput,
+  title: 'components/CardInput',
+  component: CardInput,
   parameters: {
     layout: 'centered'
   },
@@ -16,7 +16,7 @@ const meta = {
     emoji: 'gemStone',
     onChange: () => {}
   }
-} satisfies Meta<typeof TagInput>;
+} satisfies Meta<typeof CardInput>;
 
 export default meta;
 

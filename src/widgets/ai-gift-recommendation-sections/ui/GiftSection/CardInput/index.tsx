@@ -27,7 +27,7 @@ export default function CardInput({
       />
       <label
         htmlFor={`${name}-${value}`}
-        className="flex aspect-square cursor-pointer flex-col justify-center rounded-xl border border-gray-300 text-center text-base peer-checked:border-2 peer-checked:border-primary-400"
+        className="flex aspect-square cursor-pointer flex-col justify-center rounded-xl border border-gray-300 p-4 text-center text-base peer-checked:border-2 peer-checked:border-primary-400"
       >
         <span className="text-xl">{EMOJIS[emoji]}</span>
         {label}
