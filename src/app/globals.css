@@ -29,6 +29,10 @@
   label {
     @apply block;
   }
+
+  input {
+    @apply rounded-none;
+  }
 }
 
 @layer utilities {
