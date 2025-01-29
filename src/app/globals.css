@@ -26,12 +26,14 @@
     @apply w-full;
   }
 
-  label {
+  label,
+  input {
     @apply block;
   }
 
   input {
     @apply rounded-none;
+    @apply w-full;
   }
 }
 

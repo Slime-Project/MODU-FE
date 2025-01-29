@@ -110,6 +110,7 @@ export default function GiftSection({
                   label={`${value} 선물`}
                   value={value}
                   emoji={emoji}
+                  checked={character === value}
                   onChange={() => updateCharacter(value)}
                 />
               </li>

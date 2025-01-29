@@ -14,6 +14,7 @@ const meta = {
     label: 'card',
     value: 'card',
     emoji: 'gemStone',
+    checked: true,
     onChange: () => {}
   }
 } satisfies Meta<typeof CardInput>;
@@ -22,4 +23,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Checked: Story = {
+  args: {
+    checked: true
+  }
+};
+export const Unchecked: Story = {
+  args: {
+    checked: false
+  }
+};

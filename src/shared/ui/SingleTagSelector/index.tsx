@@ -3,11 +3,13 @@ import TagInput from '@/shared/ui/TagInput';
 export default function SingleTagSelector<T extends string>({
   tags,
   name,
+  selectedTag,
   updateTag,
   className = ''
 }: Readonly<{
   tags: readonly T[];
   name: string;
+  selectedTag: T | null;
   updateTag: (tag: T) => void;
   className?: string;
 }>) {
@@ -21,6 +23,7 @@ export default function SingleTagSelector<T extends string>({
             label={tag}
             value={tag}
             size="sm"
+            checked={selectedTag === tag}
             onChange={() => updateTag(tag)}
           />
         </li>

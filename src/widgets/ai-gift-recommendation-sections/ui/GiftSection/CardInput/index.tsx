@@ -7,12 +7,14 @@ export default function CardInput({
   value,
   label,
   emoji,
+  checked,
   onChange
 }: {
   name: string;
   value: string;
   label: string;
   emoji: Emoji;
+  checked: boolean;
   onChange: ChangeEventHandler<HTMLInputElement>;
 }) {
   return (
@@ -23,6 +25,7 @@ export default function CardInput({
         type="radio"
         name={name}
         value={value}
+        checked={checked}
         onChange={onChange}
       />
       <label

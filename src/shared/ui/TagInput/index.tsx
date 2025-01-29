@@ -13,6 +13,7 @@ export default function TagInput({
   value,
   label,
   size,
+  checked,
   onChange
 }: {
   type: 'radio' | 'checkbox';
@@ -20,6 +21,7 @@ export default function TagInput({
   value: string;
   label: string;
   size: keyof typeof tagInputTheme.size;
+  checked: boolean;
   onChange: ChangeEventHandler<HTMLInputElement>;
 }) {
   return (
@@ -30,6 +32,7 @@ export default function TagInput({
         type={type}
         name={name}
         value={value}
+        checked={checked}
         onChange={onChange}
       />
       <label

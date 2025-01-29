@@ -1,5 +1,5 @@
-import GiftSection from '@/widgets/ai-gift-recommendation-sections/ui/GiftSection/GiftSection';
-
+import ExtraSection from './ui/ExtraSection/ExtraSection';
+import GiftSection from './ui/GiftSection/GiftSection';
 import RecipientSection from './ui/RecipientSection/RecipientSection';
 
-export { RecipientSection, GiftSection };
+export { RecipientSection, GiftSection, ExtraSection };

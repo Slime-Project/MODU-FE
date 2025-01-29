@@ -68,19 +68,35 @@ export default function RecipientSection({
       <SectionTitle title="선물할 상대방에 대해 알려주세요!" />
       <FieldsContainer>
         <FieldWrap title="상대방의 성별">
-          <SingleTagSelector name="gender" tags={GENDERS} updateTag={updateGender} />
+          <SingleTagSelector
+            name="gender"
+            tags={GENDERS}
+            selectedTag={gender}
+            updateTag={updateGender}
+          />
         </FieldWrap>
         <FieldWrap title="상대방의 연령대">
-          <SingleTagSelector name="ageGroup" tags={AGE_GROUPS} updateTag={updateAgeGroup} />
+          <SingleTagSelector
+            name="ageGroup"
+            tags={AGE_GROUPS}
+            selectedTag={ageGroup}
+            updateTag={updateAgeGroup}
+          />
           <SingleTagSelector
             className="mt-5"
             name="agePhase"
             tags={AGE_PHASES}
+            selectedTag={agePhase}
             updateTag={updateAgePhase}
           />
         </FieldWrap>
         <FieldWrap title="상대방과 나의 관계">
-          <SingleTagSelector name="relation" tags={RELATIONS} updateTag={updateRelation} />
+          <SingleTagSelector
+            name="relation"
+            tags={RELATIONS}
+            selectedTag={relation}
+            updateTag={updateRelation}
+          />
           {relation === '기타' && (
             <TextInput
               label="기타 관계"
