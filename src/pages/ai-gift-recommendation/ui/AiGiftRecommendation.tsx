@@ -14,9 +14,11 @@ import {
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
+import BottomBtn from '@/shared/ui/BottomBtn';
 import ProgressBar from '@/shared/ui/ProgressBar';
 import { TopBar } from '@/shared/ui/TopBar';
 import { GiftSection, RecipientSection } from '@/widgets/ai-gift-recommendation-sections';
+import ExtraSection from '@/widgets/ai-gift-recommendation-sections/ui/ExtraSection/ExtraSection';
 
 export const getPercentage = (index: number) =>
   calculatePercentage(index + 1, AI_GIFT_RECOMMENDATION_HASHES.length + 1);
@@ -34,6 +36,12 @@ export default function AiGiftRecommendation() {
   const [otherRelation, setOtherRelation] = useState('');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
+  const [description, setDescription] = useState('');
+
+  useEffect(() => {
+    const index = AI_GIFT_RECOMMENDATION_HASHES.findIndex(v => v === hash);
+    setPercentage(getPercentage(index));
+  }, [hash]);
 
   const updateOtherRelation = (value: string) => {
     setOtherRelation(value);
@@ -44,18 +52,16 @@ export default function AiGiftRecommendation() {
   const updateMaxPrice = (value: string) => {
     setMaxPrice(value);
   };
-
-  useEffect(() => {
-    const index = AI_GIFT_RECOMMENDATION_HASHES.findIndex(v => v === hash);
-    setPercentage(getPercentage(index));
-  }, [hash]);
+  const updateDescription = (value: string) => {
+    setDescription(value);
+  };
 
   return (
     <>
       <TopBar title="AI 선물 추천" />
       <main>
         <ProgressBar percentage={percentage} />
-        <form className="px-4 pb-20 pt-6">
+        <form className="px-4 pb-20 pt-6" onSubmit={() => {}}>
           {hash === 'recipient' && (
             <RecipientSection
               updateGender={updateGender}
@@ -79,6 +85,12 @@ export default function AiGiftRecommendation() {
               maxPrice={maxPrice}
               character={character}
             />
+          )}
+          {hash === 'extra' && (
+            <>
+              <ExtraSection updateDescription={updateDescription} description={description} />
+              <BottomBtn>AI에게 추천받기</BottomBtn>
+            </>
           )}
         </form>
       </main>
