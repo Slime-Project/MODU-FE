@@ -93,7 +93,7 @@ export default function AiGiftRecommendation() {
           {hash === 'extra' && (
             <>
               <ExtraSection updateDescription={updateDescription} description={description} />
-              <BottomBtn>AI에게 추천받기</BottomBtn>
+              <BottomBtn type="submit">AI에게 추천받기</BottomBtn>
             </>
           )}
         </form>
