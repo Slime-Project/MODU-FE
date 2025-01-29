@@ -5,7 +5,15 @@ import TagInput, { tagInputTheme } from '.';
 describe('TagInput Component', () => {
   it('renders the input label with the correct size class', () => {
     render(
-      <TagInput size="sm" type="radio" label="label" name="name" value="#tag" onChange={() => {}} />
+      <TagInput
+        size="sm"
+        type="radio"
+        label="label"
+        name="name"
+        value="#tag"
+        checked
+        onChange={() => {}}
+      />
     );
     const label = screen.getByText('label');
     expect(label).toHaveClass(tagInputTheme.size.sm);
@@ -13,21 +21,45 @@ describe('TagInput Component', () => {
 
   it('renders label text correctly', () => {
     render(
-      <TagInput size="sm" type="radio" label="label" name="name" value="#tag" onChange={() => {}} />
+      <TagInput
+        size="sm"
+        type="radio"
+        label="label"
+        name="name"
+        value="#tag"
+        checked
+        onChange={() => {}}
+      />
     );
     expect(screen.getByText('label')).toBeInTheDocument();
   });
 
   it('renders value correctly', () => {
     render(
-      <TagInput size="sm" type="radio" label="label" name="name" value="#tag" onChange={() => {}} />
+      <TagInput
+        size="sm"
+        type="radio"
+        label="label"
+        name="name"
+        value="#tag"
+        checked
+        onChange={() => {}}
+      />
     );
     expect(screen.getByDisplayValue('#tag')).toBeInTheDocument();
   });
 
   it('applies name attribute correctly', () => {
     render(
-      <TagInput size="sm" type="radio" label="label" name="name" value="#tag" onChange={() => {}} />
+      <TagInput
+        size="sm"
+        type="radio"
+        label="label"
+        name="name"
+        value="#tag"
+        checked
+        onChange={() => {}}
+      />
     );
     const input = screen.getByRole('radio');
     expect(input).toHaveAttribute('name', 'name');
@@ -41,11 +73,28 @@ describe('TagInput Component', () => {
         label="label"
         name="name"
         value="#tag"
+        checked
         onChange={() => {}}
       />
     );
     const input = screen.getByRole('checkbox');
     expect(input).toHaveAttribute('type', 'checkbox');
+  });
+
+  it('renders with the checked state', () => {
+    render(
+      <TagInput
+        size="sm"
+        type="radio"
+        label="label"
+        name="name"
+        value="#tag"
+        checked
+        onChange={() => {}}
+      />
+    );
+    const input = screen.getByRole('radio');
+    expect(input).toBeChecked();
   });
 
   it('calls change handler when changed', () => {
@@ -57,6 +106,7 @@ describe('TagInput Component', () => {
         label="label"
         name="name"
         value="#tag"
+        checked={false}
         onChange={handleChange}
       />
     );
