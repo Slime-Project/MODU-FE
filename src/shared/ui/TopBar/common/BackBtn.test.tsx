@@ -1,14 +1,15 @@
 import { render } from '@testing-library/react';
 
-import BackLink from './BackBtn';
+import BackBtn from './BackBtn';
 import IconBtn from './IconBtn';
 
 jest.mock('./IconBtn');
+jest.mock('next/navigation');
 
-describe('BackLink Component', () => {
+describe('BackBtn Component', () => {
   it('passes the className to IconBtn', () => {
     const className = 'custom-class';
-    render(<BackLink className={className} />);
+    render(<BackBtn className={className} />);
     expect(IconBtn).toHaveBeenCalledWith(expect.objectContaining({ className }), expect.anything());
   });
 });

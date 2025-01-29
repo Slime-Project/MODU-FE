@@ -8,7 +8,7 @@ jest.mock('./common', () => ({
   ...jest.requireActual('./common'),
   LanguageBtn: jest.fn(),
   Title: jest.fn(),
-  BackLink: jest.fn(),
+  BackBtn: jest.fn(),
   SearchLink: jest.fn()
 }));
 

@@ -4,8 +4,11 @@ import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';
-import { GiftSection, RecipientSection } from '@/widgets/ai-gift-recommendation-sections';
-import ExtraSection from '@/widgets/ai-gift-recommendation-sections/ui/ExtraSection/ExtraSection';
+import {
+  GiftSection,
+  RecipientSection,
+  ExtraSection
+} from '@/widgets/ai-gift-recommendation-sections';
 
 import AiGiftRecommendation, { getPercentage } from './AiGiftRecommendation';
 
