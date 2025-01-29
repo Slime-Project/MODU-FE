@@ -8,9 +8,9 @@ export default function BottomBtn({
   onClick,
   children
 }: {
-  disabled: boolean;
+  disabled?: boolean;
   type?: 'button' | 'submit';
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   children: ReactNode;
 }) {
   return (

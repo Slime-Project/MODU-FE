@@ -19,10 +19,10 @@ export default function Btn({
   children
 }: {
   size: keyof typeof btnTheme.size;
-  disabled: boolean;
+  disabled?: boolean;
   shadow?: boolean;
   type?: 'button' | 'submit';
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
   children: ReactNode;
 }) {

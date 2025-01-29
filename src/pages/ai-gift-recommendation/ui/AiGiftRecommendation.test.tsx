@@ -5,6 +5,7 @@ import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';
 import { GiftSection, RecipientSection } from '@/widgets/ai-gift-recommendation-sections';
+import ExtraSection from '@/widgets/ai-gift-recommendation-sections/ui/ExtraSection/ExtraSection';
 
 import AiGiftRecommendation, { getPercentage } from './AiGiftRecommendation';
 
@@ -44,6 +45,18 @@ describe('AiGiftRecommendation', () => {
     jest.mocked(useHash).mockReturnValue('extra');
     render(<AiGiftRecommendation />);
     expect(GiftSection).not.toHaveBeenCalled();
+  });
+
+  it('should render ExtraSection when hash is "extra"', () => {
+    jest.mocked(useHash).mockReturnValue('extra');
+    render(<AiGiftRecommendation />);
+    expect(ExtraSection).toHaveBeenCalled();
+  });
+
+  it('should not render ExtraSection when hash is not "extra"', () => {
+    jest.mocked(useHash).mockReturnValue('gift');
+    render(<AiGiftRecommendation />);
+    expect(ExtraSection).not.toHaveBeenCalled();
   });
 
   it('should render ProgressBar with 0% initially', () => {
