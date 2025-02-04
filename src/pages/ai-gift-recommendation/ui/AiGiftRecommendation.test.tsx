@@ -10,7 +10,7 @@ import {
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/step-loading/ui/StepLoading';
+import StepLoading from '@/widgets/stepLoading/ui';
 
 import AiGiftRecommendation, { getPercentage } from './AiGiftRecommendation';
 
@@ -18,7 +18,7 @@ jest.mock('@/shared/lib/hooks/useTagSelection');
 jest.mock('@/shared/lib/hooks/useHash');
 jest.mock('@/shared/ui/TopBar');
 jest.mock('@/shared/ui/ProgressBar');
-jest.mock('@/widgets/step-loading/ui/StepLoading');
+jest.mock('@/widgets/stepLoading/ui');
 jest.mock('@/widgets/ai-gift-recommendation-sections');
 
 describe('AiGiftRecommendation', () => {

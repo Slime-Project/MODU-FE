@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 
 import Step from './Step';
-import StepLoading from './StepLoading';
+
+import StepLoading from '.';
 
 jest.mock('./Step');
 jest.mock('next/image');

@@ -22,7 +22,7 @@ import {
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/step-loading/ui/StepLoading';
+import StepLoading from '@/widgets/stepLoading/ui';
 
 export const getPercentage = (index: number) =>
   calculatePercentage(index + 1, AI_GIFT_RECOMMENDATION_HASHES.length + 1);
