@@ -1,14 +1,16 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation/model/consts';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';
+import { TopBar } from '@/shared/ui/TopBar';
 import {
   GiftSection,
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
+import StepLoading from '@/widgets/step-loading/ui/StepLoading';
 
 import AiGiftRecommendation, { getPercentage } from './AiGiftRecommendation';
 
@@ -16,6 +18,7 @@ jest.mock('@/shared/lib/hooks/useTagSelection');
 jest.mock('@/shared/lib/hooks/useHash');
 jest.mock('@/shared/ui/TopBar');
 jest.mock('@/shared/ui/ProgressBar');
+jest.mock('@/widgets/step-loading/ui/StepLoading');
 jest.mock('@/widgets/ai-gift-recommendation-sections');
 
 describe('AiGiftRecommendation', () => {
@@ -73,5 +76,17 @@ describe('AiGiftRecommendation', () => {
     render(<AiGiftRecommendation />);
     const { calls } = jest.mocked(ProgressBar).mock;
     expect(calls[1][0]).toEqual(expect.objectContaining({ percentage: getPercentage(0) }));
+  });
+
+  it('should render TopBar if submit is not triggered', () => {
+    render(<AiGiftRecommendation />);
+    expect(TopBar).toHaveBeenCalled();
+  });
+
+  it('should render StepLoading if submit is triggered', () => {
+    const { getByRole } = render(<AiGiftRecommendation />);
+    const form = getByRole('form');
+    fireEvent.submit(form);
+    expect(StepLoading).toHaveBeenCalled();
   });
 });
