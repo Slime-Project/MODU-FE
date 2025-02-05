@@ -19,7 +19,6 @@ export default function ExtraSection({
         value={description}
         maxLength={24}
         onChange={e => updateDescription(e.currentTarget.value)}
-        required
       />
     </section>
   );
