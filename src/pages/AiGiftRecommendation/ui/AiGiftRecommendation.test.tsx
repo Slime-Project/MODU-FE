@@ -23,7 +23,7 @@ jest.mock('@/shared/ui/TopBar');
 jest.mock('@/shared/ui/ProgressBar');
 jest.mock('@/widgets/stepLoading/ui');
 jest.mock('@/widgets/ai-gift-recommendation-sections');
-jest.mock('@/pages/ai-gift-recommendation/lib/useAiGiftRecommendation');
+jest.mock('@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation');
 
 describe('AiGiftRecommendation', () => {
   beforeEach(() => {
