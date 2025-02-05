@@ -21,7 +21,7 @@ jest.mock('@/shared/lib/hooks/useTagSelection');
 jest.mock('@/shared/lib/hooks/useHash');
 jest.mock('@/shared/ui/TopBar');
 jest.mock('@/shared/ui/ProgressBar');
-jest.mock('@/widgets/stepLoading/ui');
+jest.mock('@/widgets/StepLoading/ui');
 jest.mock('@/widgets/ai-gift-recommendation-sections');
 jest.mock('@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation');
 
