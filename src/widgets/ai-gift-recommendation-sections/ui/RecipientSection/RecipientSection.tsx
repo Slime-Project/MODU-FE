@@ -6,13 +6,8 @@ import {
   AI_GIFT_RECOMMENDATION_HASHES,
   GENDERS,
   RELATIONS
-} from '@/entities/ai-gift-recommendation/model/consts';
-import {
-  AgeGroup,
-  AgePhase,
-  Gender,
-  Relation
-} from '@/entities/ai-gift-recommendation/model/types';
+} from '@/entities/ai-gift-recommendation';
+import { AgeGroup, AgePhase, Gender, Relation } from '@/entities/ai-gift-recommendation/types';
 import changeHash from '@/shared/lib/utils/window';
 import BottomBtn from '@/shared/ui/BottomBtn';
 import { TextInput } from '@/shared/ui/Input';

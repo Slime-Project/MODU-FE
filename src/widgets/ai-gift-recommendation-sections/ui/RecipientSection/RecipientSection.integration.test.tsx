@@ -6,7 +6,7 @@ import {
   GENDERS,
   RELATIONS,
   AI_GIFT_RECOMMENDATION_HASHES
-} from '@/entities/ai-gift-recommendation/model/consts';
+} from '@/entities/ai-gift-recommendation';
 
 import RecipientSection from './RecipientSection';
 
