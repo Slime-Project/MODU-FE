@@ -11,7 +11,7 @@ import {
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/대소문자변경';
+import StepLoading from '@/widgets/StepLoading';
 
 import AiGiftRecommendation, { getPercentage } from '.';
 
