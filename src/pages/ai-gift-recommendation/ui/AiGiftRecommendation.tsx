@@ -1,16 +1,18 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { FormEvent, useEffect, useState } from 'react';
 
-import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation/model/consts';
+import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation';
 import {
+  Gender,
   AgeGroup,
   AgePhase,
-  AiGiftRecommendationHash,
   Character,
-  Gender,
-  Relation
-} from '@/entities/ai-gift-recommendation/model/types';
+  Relation,
+  AiGiftRecommendationHash
+} from '@/entities/ai-gift-recommendation/types';
+import useAiGiftRecommendation from '@/pages/ai-gift-recommendation/lib/useAiGiftRecommendation';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
@@ -41,15 +43,22 @@ export default function AiGiftRecommendation() {
   const { tag: relation, updateTag: updateRelation } = useSingleTagSelection<Relation>();
   const { tag: character, updateTag: updateCharacter } = useSingleTagSelection<Character>();
 
-  const hash = useHash<AiGiftRecommendationHash>(AI_GIFT_RECOMMENDATION_HASHES);
-
-  const [percentage, setPercentage] = useState(0);
   const [otherRelation, setOtherRelation] = useState('');
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [description, setDescription] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [percentage, setPercentage] = useState(0);
   const [step, setStep] = useState(0);
+
+  const { isPending, mutate, error } = useAiGiftRecommendation();
+  const hash = useHash<AiGiftRecommendationHash>(AI_GIFT_RECOMMENDATION_HASHES);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (error) {
+      throw error;
+    }
+  }, [error]);
 
   useEffect(() => {
     const index = AI_GIFT_RECOMMENDATION_HASHES.findIndex(v => v === hash);
@@ -57,15 +66,15 @@ export default function AiGiftRecommendation() {
   }, [hash]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setStep(1);
-    }, 1000);
-    setTimeout(() => {
-      setStep(2);
-    }, 2000);
-    // api 작업 완료 시
-    // setStep(3);
-  }, []);
+    if (isPending) {
+      setTimeout(() => {
+        setStep(1);
+      }, 1000);
+      setTimeout(() => {
+        setStep(2);
+      }, 3000);
+    }
+  }, [isPending]);
 
   const updateOtherRelation = (value: string) => {
     setOtherRelation(value);
@@ -79,16 +88,33 @@ export default function AiGiftRecommendation() {
   const updateDescription = (value: string) => {
     setDescription(value);
   };
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  const handleSubmit = () => {
-    setIsLoading(true);
+    if (gender && ageGroup && agePhase && relation && character) {
+      mutate(
+        {
+          gender,
+          age: ageGroup,
+          range: agePhase,
+          relation,
+          min: minPrice,
+          max: maxPrice,
+          character,
+          description
+        },
+        {
+          onSuccess: () => router.push('/ai-gift-recommendation/result')
+        }
+      );
+    }
   };
 
   return (
     <>
-      {!isLoading && <TopBar title="AI 선물 추천" />}
+      {!isPending && <TopBar title="AI 선물 추천" />}
       <main>
-        {isLoading ? (
+        {isPending ? (
           <StepLoading title="AI가 선물을 고민하고 있어요" step={step} steps={steps} />
         ) : (
           <>
@@ -121,7 +147,7 @@ export default function AiGiftRecommendation() {
               {hash === 'extra' && (
                 <>
                   <ExtraSection updateDescription={updateDescription} description={description} />
-                  <BottomBtn>AI에게 추천받기</BottomBtn>
+                  <BottomBtn type="submit">AI에게 추천받기</BottomBtn>
                 </>
               )}
             </form>
