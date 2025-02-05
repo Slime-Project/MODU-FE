@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation';
-import useAiGiftRecommendation from '@/pages/ai-gift-recommendation/lib/useAiGiftRecommendation';
+import useAiGiftRecommendation from '@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';
@@ -11,9 +11,9 @@ import {
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/stepLoading/ui';
+import StepLoading from '@/widgets/StepLoading';
 
-import AiGiftRecommendation, { getPercentage } from './AiGiftRecommendation';
+import AiGiftRecommendation, { getPercentage } from '.';
 
 jest.mock('next/navigation');
 

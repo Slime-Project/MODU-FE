@@ -12,7 +12,7 @@ import {
   Relation,
   AiGiftRecommendationHash
 } from '@/entities/ai-gift-recommendation/types';
-import useAiGiftRecommendation from '@/pages/ai-gift-recommendation/lib/useAiGiftRecommendation';
+import useAiGiftRecommendation from '@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
@@ -24,7 +24,7 @@ import {
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/stepLoading/ui';
+import StepLoading from '@/widgets/StepLoading';
 
 export const getPercentage = (index: number) =>
   calculatePercentage(index + 1, AI_GIFT_RECOMMENDATION_HASHES.length + 1);
