@@ -18,13 +18,13 @@ import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
 import BottomBtn from '@/shared/ui/BottomBtn';
 import ProgressBar from '@/shared/ui/ProgressBar';
+import StepLoading from '@/shared/ui/StepLoading';
 import { TopBar } from '@/shared/ui/TopBar';
 import {
   GiftSection,
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/StepLoading';
 
 export const getPercentage = (index: number) =>
   calculatePercentage(index + 1, AI_GIFT_RECOMMENDATION_HASHES.length + 1);

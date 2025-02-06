@@ -5,13 +5,13 @@ import useAiGiftRecommendation from '@/pages/AiGiftRecommendation/lib/useAiGiftR
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';
+import StepLoading from '@/shared/ui/StepLoading';
 import { TopBar } from '@/shared/ui/TopBar';
 import {
   GiftSection,
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/StepLoading';
 
 import AiGiftRecommendation, { getPercentage } from '.';
 
@@ -21,7 +21,7 @@ jest.mock('@/shared/lib/hooks/useTagSelection');
 jest.mock('@/shared/lib/hooks/useHash');
 jest.mock('@/shared/ui/TopBar');
 jest.mock('@/shared/ui/ProgressBar');
-jest.mock('@/widgets/StepLoading/ui');
+jest.mock('@/shared/ui/StepLoading');
 jest.mock('@/widgets/ai-gift-recommendation-sections');
 jest.mock('@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation');
 
