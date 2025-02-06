@@ -1,6 +1,7 @@
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
-import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation/model/consts';
+import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation';
+import useAiGiftRecommendation from '@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import ProgressBar from '@/shared/ui/ProgressBar';
@@ -10,22 +11,30 @@ import {
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/stepLoading/ui';
+import StepLoading from '@/widgets/StepLoading';
 
-import AiGiftRecommendation, { getPercentage } from './AiGiftRecommendation';
+import AiGiftRecommendation, { getPercentage } from '.';
+
+jest.mock('next/navigation');
 
 jest.mock('@/shared/lib/hooks/useTagSelection');
 jest.mock('@/shared/lib/hooks/useHash');
 jest.mock('@/shared/ui/TopBar');
 jest.mock('@/shared/ui/ProgressBar');
-jest.mock('@/widgets/stepLoading/ui');
+jest.mock('@/widgets/StepLoading/ui');
 jest.mock('@/widgets/ai-gift-recommendation-sections');
+jest.mock('@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation');
 
 describe('AiGiftRecommendation', () => {
   beforeEach(() => {
     jest.mocked(useSingleTagSelection).mockReturnValue({
       tag: null,
       updateTag: jest.fn()
+    });
+    jest.mocked(useAiGiftRecommendation).mockReturnValue({
+      isPending: false,
+      mutate: jest.fn(),
+      error: null
     });
   });
 
@@ -78,15 +87,29 @@ describe('AiGiftRecommendation', () => {
     expect(calls[1][0]).toEqual(expect.objectContaining({ percentage: getPercentage(0) }));
   });
 
-  it('should render TopBar if submit is not triggered', () => {
+  it('should render TopBar when isPending is false', () => {
     render(<AiGiftRecommendation />);
     expect(TopBar).toHaveBeenCalled();
   });
 
-  it('should render StepLoading if submit is triggered', () => {
-    const { getByRole } = render(<AiGiftRecommendation />);
-    const form = getByRole('form');
-    fireEvent.submit(form);
+  it('should render StepLoading when isPending is true', () => {
+    jest.mocked(useAiGiftRecommendation).mockReturnValue({
+      isPending: true,
+      mutate: jest.fn(),
+      error: null
+    });
+    render(<AiGiftRecommendation />);
     expect(StepLoading).toHaveBeenCalled();
+  });
+
+  it('should throw error if error is not null', () => {
+    const error = new Error('Test error');
+    jest.mocked(useAiGiftRecommendation).mockReturnValue({
+      isPending: false,
+      mutate: jest.fn(),
+      error
+    });
+
+    expect(() => render(<AiGiftRecommendation />)).toThrow('Test error');
   });
 });

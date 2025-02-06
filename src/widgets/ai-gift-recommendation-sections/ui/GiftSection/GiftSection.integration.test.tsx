@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 
-import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation/model/consts';
+import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation';
 
 import GiftSection from './GiftSection';
 

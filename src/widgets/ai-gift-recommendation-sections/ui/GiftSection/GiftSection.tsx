@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 
-import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation/model/consts';
-import { Character } from '@/entities/ai-gift-recommendation/model/types';
+import { AI_GIFT_RECOMMENDATION_HASHES } from '@/entities/ai-gift-recommendation';
+import { Character } from '@/entities/ai-gift-recommendation/types';
 import changeHash from '@/shared/lib/utils/window';
 import BottomBtn from '@/shared/ui/BottomBtn';
 import { Emoji } from '@/shared/ui/emojis';
