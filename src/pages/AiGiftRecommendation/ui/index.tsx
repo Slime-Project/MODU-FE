@@ -12,7 +12,7 @@ import {
   Relation,
   AiGiftRecommendationHash
 } from '@/entities/ai-gift-recommendation/types';
-import useAiGiftRecommendation from '@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation';
+import useAiGiftRecommendation from '@/features/get-ai-gift-recommendation';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
