@@ -27,7 +27,8 @@
   }
 
   label,
-  input {
+  input,
+  a {
     @apply block;
   }
 
