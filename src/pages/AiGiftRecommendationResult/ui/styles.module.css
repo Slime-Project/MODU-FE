@@ -1,0 +1,12 @@
+.swiper {
+  @apply overflow-visible m-auto w-[54.4%];
+}
+.swiper > div {
+  @apply flex;
+}
+.swiper-slide {
+  @apply shrink-0;
+}
+.curr.swiper-slide {
+  transform: scale(0.92) !important;
+}

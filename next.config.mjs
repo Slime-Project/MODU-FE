@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ['shopping-phinf.pstatic.net', 'searchad-phinf.pstatic.net']
+  },
   typescript: {
     tsconfigPath: './tsconfig.build.json'
   },
