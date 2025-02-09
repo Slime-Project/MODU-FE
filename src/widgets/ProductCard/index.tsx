@@ -21,7 +21,7 @@ export default function ProductCard({
   const formattedPrice = price.toLocaleString();
 
   return (
-    <div className={`rounded-xl p-4 pt-3 ${styles['card-wrap']}`}>
+    <article className={`rounded-xl p-4 pt-3 ${styles['card-wrap']}`}>
       <Image className="rounded-xl" width={386} height={322} src={img} alt="상품 이미지" />
       <div className="relative mt-3">
         <strong className="ellipsis mr-10 block text-xs font-normal">{title}</strong>
@@ -37,6 +37,6 @@ export default function ProductCard({
           선물 보러가기
         </PrimaryLink>
       </div>
-    </div>
+    </article>
   );
 }
