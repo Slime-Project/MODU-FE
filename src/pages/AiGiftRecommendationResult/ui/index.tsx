@@ -12,6 +12,7 @@ import {
 import Tag from '@/shared/ui/Tag';
 import { RefreshTopBar } from '@/shared/ui/TopBar';
 import ProductCard from '@/widgets/ProductCard';
+import { ProductListBox, extractProductProps } from '@/widgets/ProductListBox';
 
 import styles from './styles.module.css';
 
@@ -62,6 +63,11 @@ export default function AiGiftRecommendationResult() {
             );
           })}
         </Swiper>
+        <ProductListBox
+          className="m-auto mt-6 w-2/3"
+          products={extractProductProps(aiGiftRecommendation.gifts[curr].items.slice(1))}
+          keyword={aiGiftRecommendation.gifts[curr].keyword}
+        />
       </main>
     </>
   );
