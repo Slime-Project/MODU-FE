@@ -16,7 +16,7 @@ export type AiGiftRecommendationReq = {
   gender: Gender;
   age: AgeGroup;
   range: AgePhase;
-  relation: Relation;
+  relation: string;
   min: string;
   max: string;
   character: Character;

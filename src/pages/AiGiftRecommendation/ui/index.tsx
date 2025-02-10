@@ -91,13 +91,13 @@ export default function AiGiftRecommendation() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (gender && ageGroup && agePhase && relation && character) {
+    if (gender && ageGroup && agePhase && character && relation) {
       mutate(
         {
           gender,
           age: ageGroup,
           range: agePhase,
-          relation,
+          relation: relation === '기타' ? otherRelation : relation,
           min: minPrice,
           max: maxPrice,
           character,
