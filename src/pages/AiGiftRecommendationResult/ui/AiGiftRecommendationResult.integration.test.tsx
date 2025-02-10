@@ -22,6 +22,7 @@ jest.mock('@/entities/ai-gift-recommendation', () => ({
 }));
 jest.mock('@/shared/ui/Tag');
 jest.mock('@/widgets/ProductCard');
+jest.mock('@/widgets/ProductListBox');
 
 describe('AiGiftRecommendationResult', () => {
   const router: AppRouterInstance = {
