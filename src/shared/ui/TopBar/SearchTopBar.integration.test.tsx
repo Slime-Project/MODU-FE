@@ -7,7 +7,7 @@ jest.mock('./common', () => ({
   ...jest.requireActual('./common'),
   IconBtn: jest.fn(),
   LanguageBtn: jest.fn(),
-  BackLink: jest.fn()
+  BackBtn: jest.fn()
 }));
 
 describe('SearchTopBar Component', () => {

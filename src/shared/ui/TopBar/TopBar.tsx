@@ -1,4 +1,4 @@
-import { Header, Title, BackBtn, SearchLink, LanguageBtn } from './common';
+import { Header, Title, BackBtn, SearchLink } from './common';
 
 export default function TopBar({
   title,
@@ -13,7 +13,6 @@ export default function TopBar({
       {title && <Title title={title} />}
       <BackBtn />
       {hasSearchLink && <SearchLink className="ml-auto" />}
-      <LanguageBtn />
     </Header>
   );
 }

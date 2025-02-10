@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Header, SearchLink, LanguageBtn } from './common';
+import { Header, SearchLink } from './common';
 
 export default function LogoTopBar() {
   return (
@@ -9,7 +9,6 @@ export default function LogoTopBar() {
         <Image className="h-full" width={87} height={20} src="/svgs/logo.svg" alt="MODU" />
       </h1>
       <SearchLink className="ml-auto" />
-      <LanguageBtn />
     </Header>
   );
 }

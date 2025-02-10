@@ -6,7 +6,6 @@ import TopBar from './TopBar';
 // Header 제외 모의
 jest.mock('./common', () => ({
   ...jest.requireActual('./common'),
-  LanguageBtn: jest.fn(),
   Title: jest.fn(),
   BackBtn: jest.fn(),
   SearchLink: jest.fn()

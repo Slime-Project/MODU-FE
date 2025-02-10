@@ -9,7 +9,6 @@ jest.mock('next/navigation');
 jest.mock('./common', () => ({
   ...jest.requireActual('./common'),
   IconBtn: jest.fn(),
-  LanguageBtn: jest.fn(),
   Title: jest.fn(),
   BackBtn: jest.fn()
 }));
