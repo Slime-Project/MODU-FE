@@ -17,14 +17,14 @@ export default function SearchTopBar({
         name="search"
       >
         <input
-          className="h-7 w-full rounded-full bg-gray-200"
+          className="w-full rounded-full bg-gray-200 p-2 pl-3 pr-9 text-xs leading-none placeholder:text-gray-700"
           type="text"
           maxLength={12}
           minLength={1}
           required
           placeholder="집들이 선물"
         />
-        <IconBtn className="absolute right-0.5" src="/svgs/search.svg" alt="search" />
+        <IconBtn className="absolute right-0 p-2" src="/svgs/search.svg" alt="search" />
       </form>
     </Header>
   );
