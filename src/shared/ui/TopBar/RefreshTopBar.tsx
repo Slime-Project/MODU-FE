@@ -1,4 +1,4 @@
-import { Header, Title, BackBtn, LanguageBtn, IconBtn } from './common';
+import { Header, Title, BackBtn, IconBtn } from './common';
 
 export default function RefreshTopBar({ title, refresh }: { title?: string; refresh: () => void }) {
   return (
@@ -6,8 +6,7 @@ export default function RefreshTopBar({ title, refresh }: { title?: string; refr
       <h1 className="sr-only">MODU</h1>
       {title && <Title title={title} />}
       <BackBtn />
-      <LanguageBtn className="ml-auto" />
-      <IconBtn onClick={refresh} src="/svgs/refresh.svg" alt="refresh" />
+      <IconBtn className="ml-auto" onClick={refresh} src="/svgs/refresh.svg" alt="refresh" />
     </Header>
   );
 }

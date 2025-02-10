@@ -7,7 +7,6 @@ import { IconBtn, Title } from './common';
 jest.mock('./common', () => ({
   ...jest.requireActual('./common'),
   IconBtn: jest.fn(),
-  LanguageBtn: jest.fn(),
   Title: jest.fn()
 }));
 

@@ -1,6 +1,6 @@
 import { FormEventHandler } from 'react';
 
-import { Header, BackLink, IconBtn, LanguageBtn } from './common';
+import { Header, BackBtn, IconBtn } from './common';
 
 export default function SearchTopBar({
   onSubmit
@@ -10,7 +10,7 @@ export default function SearchTopBar({
   return (
     <Header>
       <h1 className="sr-only">MODU</h1>
-      <BackLink />
+      <BackBtn />
       <form
         className="relative mx-1.5 ml-3 flex w-full items-center"
         onSubmit={onSubmit}
@@ -26,7 +26,6 @@ export default function SearchTopBar({
         />
         <IconBtn className="absolute right-0.5" src="/svgs/search.svg" alt="search" />
       </form>
-      <LanguageBtn />
     </Header>
   );
 }
