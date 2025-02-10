@@ -28,6 +28,7 @@
     "next": "^14.2.23",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "swiper": "^11.2.2",
     "token-transformer": "^0.0.33",
     "zustand": "^5.0.3"
   },

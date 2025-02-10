@@ -4,6 +4,7 @@ import {
   AGE_PHASES,
   RELATIONS
 } from '@/entities/ai-gift-recommendation/model/consts';
+import Product from '@/entities/product/model/types';
 
 export type Gender = (typeof GENDERS)[number];
 export type AgeGroup = (typeof AGE_GROUPS)[number];
@@ -15,7 +16,7 @@ export type AiGiftRecommendationReq = {
   gender: Gender;
   age: AgeGroup;
   range: AgePhase;
-  relation: Relation;
+  relation: string;
   min: string;
   max: string;
   character: Character;
@@ -26,17 +27,6 @@ export type AiGiftRecommendationRes = {
   tags: string[];
   gifts: {
     keyword: string;
-    items: {
-      id: number;
-      img: string;
-      title: string;
-      link: string;
-      price: number;
-      seller: string;
-      createdAt: string;
-      wishedCount: number;
-      naverProductId: string;
-      averageRating: number;
-    }[];
+    items: Product[];
   }[];
 };

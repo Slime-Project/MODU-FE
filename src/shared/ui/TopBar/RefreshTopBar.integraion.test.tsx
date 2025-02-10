@@ -3,13 +3,15 @@ import { render } from '@testing-library/react';
 import { IconBtn, Title } from './common';
 import RefreshTopBar from './RefreshTopBar';
 
+jest.mock('next/navigation');
+
 // Header 제외 모의
 jest.mock('./common', () => ({
   ...jest.requireActual('./common'),
   IconBtn: jest.fn(),
   LanguageBtn: jest.fn(),
   Title: jest.fn(),
-  BackLink: jest.fn()
+  BackBtn: jest.fn()
 }));
 
 describe('RefreshTopBar Component', () => {

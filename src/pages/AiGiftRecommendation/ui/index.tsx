@@ -12,19 +12,19 @@ import {
   Relation,
   AiGiftRecommendationHash
 } from '@/entities/ai-gift-recommendation/types';
-import useAiGiftRecommendation from '@/pages/AiGiftRecommendation/lib/useAiGiftRecommendation';
+import useAiGiftRecommendation from '@/features/get-ai-gift-recommendation';
 import useHash from '@/shared/lib/hooks/useHash';
 import { useSingleTagSelection } from '@/shared/lib/hooks/useTagSelection';
 import calculatePercentage from '@/shared/lib/utils/math';
 import BottomBtn from '@/shared/ui/BottomBtn';
 import ProgressBar from '@/shared/ui/ProgressBar';
+import StepLoading from '@/shared/ui/StepLoading';
 import { TopBar } from '@/shared/ui/TopBar';
 import {
   GiftSection,
   RecipientSection,
   ExtraSection
 } from '@/widgets/ai-gift-recommendation-sections';
-import StepLoading from '@/widgets/StepLoading';
 
 export const getPercentage = (index: number) =>
   calculatePercentage(index + 1, AI_GIFT_RECOMMENDATION_HASHES.length + 1);
@@ -91,13 +91,13 @@ export default function AiGiftRecommendation() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (gender && ageGroup && agePhase && relation && character) {
+    if (gender && ageGroup && agePhase && character && relation) {
       mutate(
         {
           gender,
           age: ageGroup,
           range: agePhase,
-          relation,
+          relation: relation === '기타' ? otherRelation : relation,
           min: minPrice,
           max: maxPrice,
           character,
