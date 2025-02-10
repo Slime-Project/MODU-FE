@@ -9,7 +9,10 @@ const preview: Preview = {
         date: /Date$/i
       }
     },
-    values: [{ name: 'dark', value: '#bdbdbd' }]
+    values: [{ name: 'dark', value: '#bdbdbd' }],
+    nextjs: {
+      appDirectory: true
+    }
   }
 };
 
