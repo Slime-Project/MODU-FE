@@ -39,6 +39,10 @@
 }
 
 @layer utilities {
+  .box-shadow {
+    box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  }
+
   .text-2xs {
     font-size: 0.625rem; /* 10px */
     @apply leading-none;

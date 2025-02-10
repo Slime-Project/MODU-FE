@@ -21,8 +21,14 @@ export default function ProductCard({
   const formattedPrice = price.toLocaleString();
 
   return (
-    <article className={`rounded-xl p-4 pt-3 ${styles['card-wrap']}`}>
-      <Image className="rounded-xl" width={386} height={322} src={img} alt="상품 이미지" />
+    <article className={`box-shadow rounded-2xl p-4 pt-3 ${styles['card-wrap']}`}>
+      <Image
+        className="rounded-xl object-cover"
+        width={386}
+        height={322}
+        src={img}
+        alt="상품 이미지"
+      />
       <div className="relative mt-3">
         <strong className="ellipsis mr-10 block text-xs font-normal">{title}</strong>
         <span className="mb-10 block text-xs font-bold">{formattedPrice}원</span>
