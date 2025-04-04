@@ -32,6 +32,11 @@ const characters: { value: Character; emoji: Emoji }[] = [
   }
 ];
 
+const hasInput = (value: string) => value !== '';
+const hasSelection = <T extends string>(value: T | null) => value !== null;
+const checkNextBtnDisabled = (minPrice: string, maxPrice: string, character: Character | null) =>
+  !(hasInput(minPrice) && hasInput(maxPrice) && hasSelection(character));
+
 export default function GiftSection({
   updateMinPrice,
   updateMaxPrice,
@@ -50,7 +55,7 @@ export default function GiftSection({
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
-    setDisabled(!(minPrice && maxPrice && character));
+    setDisabled(checkNextBtnDisabled(minPrice, maxPrice, character));
   }, [minPrice, maxPrice, character]);
 
   const createPriceInputChangeHandler =
@@ -59,11 +64,14 @@ export default function GiftSection({
         updateValue(e.currentTarget.value);
       }
     };
+  const swapMinMax = () => {
+    const maxPriceCopy = maxPrice;
+    updateMaxPrice(minPrice);
+    updateMinPrice(maxPriceCopy);
+  };
   const handleClick = () => {
     if (minPrice > maxPrice) {
-      const maxPriceCopy = maxPrice;
-      updateMaxPrice(minPrice);
-      updateMinPrice(maxPriceCopy);
+      swapMinMax();
     }
 
     changeHash(AI_GIFT_RECOMMENDATION_HASHES[2]);
