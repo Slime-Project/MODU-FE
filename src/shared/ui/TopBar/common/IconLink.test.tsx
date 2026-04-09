@@ -9,7 +9,9 @@ jest.mock('./Icon');
 describe('IconLink Component', () => {
   it('should apply the given className', () => {
     const className = 'custom-class';
-    const { getByRole } = render(<IconLink href="/search" className={className} src="" alt="" />);
+    const { getByRole } = render(
+      <IconLink href="/src/pages/Search" className={className} src="" alt="" />
+    );
     expect(getByRole('link')).toHaveClass(className);
   });
 
